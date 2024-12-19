@@ -80,15 +80,15 @@ bool isValidDate(int d, int m, int y)
 class flightDetails
 {
 
-	int flightSerial[15] = { 101, 102, 103, 122, 123, 124, 131, 132, 133, 241, 242, 243, 501, 502, 503 };
+	int flightno[15] = { 101, 102, 103, 122, 123, 124, 131, 132, 133, 241, 242, 243, 501, 502, 503 };
 	int price[16] = { 12000, 10000, 15000, 11000, 14000, 10000, 12000, 13500, 9000, 12500, 14000, 12000, 16000, 16500, 13500 };
 	int selectFlight;
 	int perPersonPrice;
 
 public:
-	void lahore()
+	void Delhi()
 	{
-		cout << "\n\n Flights available for Lahore:";
+		cout << "\n\n Flights available for Delhi:";
 		cout << "\n  " << flightSerial[0] << "-Flight (time: 5:00pm) " << price[0] << "/- per person";
 		cout << "\n  " << flightSerial[1] << "-Flight (time: 12:00am) " << price[1] << "/- per person";
 		cout << "\n  " << flightSerial[2] << "-Flight (time: 8:00pm) " << price[2] << "/- per person";
@@ -107,10 +107,10 @@ public:
 	}
 
 public:
-	void karachi()
+	void Chennai()
 	{
-		cout << "\n You have chosen Karachi.";
-		cout << "\n Flights available for Karachi:";
+		cout << "\n You have chosen Chennai.";
+		cout << "\n Flights available for Chennai:";
 		cout << "\n  " << flightSerial[3] << "-Flight (time: 3:00pm) " << price[3] << "/- per person";
 		cout << "\n  " << flightSerial[4] << "-Flight (time: 7:00pm) " << price[4] << "/- per person";
 		cout << "\n  " << flightSerial[5] << "-Flight (time: 2:00am) " << price[5] << "/- per person";
@@ -129,10 +129,10 @@ public:
 	}
 
 public:
-	void islamabad()
+	void Kolkata()
 	{
-		cout << "\n You have chosen Islamabad.";
-		cout << "\n Flights available for Islamabad:";
+		cout << "\n You have chosen Kolkata.";
+		cout << "\n Flights available for Kolkata:";
 		cout << "\n  " << flightSerial[6] << "-Flight (time: 4:00pm) " << price[6] << "/- per person";
 		cout << "\n  " << flightSerial[7] << "-Flight (time: 9:00pm) " << price[7] << "/- per person";
 		cout << "\n  " << flightSerial[8] << "-Flight (time: 2:00am) " << price[8] << "/- per person";
@@ -151,10 +151,10 @@ public:
 	}
 
 public:
-	void peshawar()
+	void Mumbai()
 	{
-		cout << "\n You have chosen Peshawar.";
-		cout << "\n Flights available for Peshawar:";
+		cout << "\n You have chosen Mumbai.";
+		
 		cout << "\n  " << flightSerial[9] << "-Flight (time: 5:00pm) " << price[9] << "/- per person";
 		cout << "\n  " << flightSerial[10] << "-Flight (time: 6:00pm) " << price[10] << "/- per person";
 		cout << "\n  " << flightSerial[11] << "-Flight (time: 1:00am) " << price[11] << "/- per person";
@@ -173,9 +173,9 @@ public:
 	}
 
 public:
-	void quetta()
+	void Bhopal()
 	{
-		cout << "\n Flights available for Quetta:";
+		cout << "\n Flights available for Bhopal:";
 		cout << "\n  " << flightSerial[12] << "-Flight (time: 4:00am) " << price[12] << "/- per person";
 		cout << "\n  " << flightSerial[13] << "-Flight (time: 3:00pm) " << price[13] << "/- per person";
 		cout << "\n  " << flightSerial[14] << "-Flight (time: 6:00am) " << price[14] << "/- per person";
@@ -253,25 +253,12 @@ public:
 	string cnic = "";
 	int numberOfBooking = 0;
 
-public:
-	//bookingProcedureOfTicket() // Constructor
-	//{
-	//	head = NULL;
-	//	front = NULL;
-	//	rear = NULL;
-	//	count = 0;
-	//	sum = 0;
-	//	fare = 0;
-	//	discount = 0;
-	//	discountFare = 0;
-	//	totalFare = 0;
-	//	numberOfBooking = 0;
-	//}
+
 
 	bool isValidCity(string city)
 	{
-		if (toLower(city) == "lahore" || toLower(city) == "islamabad" ||
-			toLower(city) == "karachi" || toLower(city) == "quetta")
+		if (toLower(city) == "delhi" || toLower(city) == "Kolkata" ||
+			toLower(city) == "Mumbai" || toLower(city) == "Bhopal")
 		{
 			return true;
 		}
@@ -294,7 +281,7 @@ public:
 				do
 				{
 					cout << "DEPARTURE\n";
-					cout << "    Our flights are only available from Karachi, Lahore, Peshawar, Islamabad and Quetta.\n";
+				
 					cout << "\nEnter your departure city from above mentioned cities: ";
 					cin >> departureCity;
 				} while (!isValidCity(departureCity));
@@ -305,7 +292,7 @@ public:
 				do
 				{
 					cout << "DESTINATION\n";
-					cout << "    Our flights are only available to Karachi, Lahore, Peshawar, Islamabad and Quetta.\n";
+					
 					cout << "\nEnter your destination city from above mentioned cities: ";
 					cin >> destinationCity;
 				} while (!isValidCity(destinationCity));
@@ -438,25 +425,25 @@ public:
 
 		// Check if user has entered correct destinationCity according to available flights
 
-		if (destinationCity == "Lahore" || destinationCity == "lahore")
+		if (destinationCity == "Delhi" )
 		{
-			call.lahore();
+			call.Delhi();
 		}
-		else if (destinationCity == "Islamabad" || destinationCity == "islamabad")
+		else if (destinationCity == "Chennai")
 		{
-			call.islamabad();
+			call.chennai();
 		}
-		else if (destinationCity == "Karachi" || destinationCity == "karachi")
+		else if (destinationCity == "Kolkata" )
 		{
-			call.karachi();
+			call.kolkata();
 		}
-		else if (destinationCity == "Quetta" || destinationCity == "quetta")
+		else if (destinationCity == "Bhopal" )
 		{
-			call.quetta();
+			call.bhopal();
 		}
-		else if (destinationCity == "Peshawar" || destinationCity == "peshawar")
+		else if (destinationCity == "Mumbai")
 		{
-			call.peshawar();
+			call.mumbai();
 		}
 		else
 		{
